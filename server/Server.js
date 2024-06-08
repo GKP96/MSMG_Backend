@@ -6,9 +6,9 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
 import cors from "cors";
-import UserRouter from "./routes/UserRouter.js";
-import AuthRouter from "./routes/AuthRouter.js";
-import BlogRouter from "./routes/BlogRouter.js";
+import UserRouter from "../routes/UserRouter.js";
+import AuthRouter from "../routes/AuthRouter.js";
+import BlogRouter from "../routes/BlogRouter.js";
 
 const app = express();
 app.use(bodyParser.json());
