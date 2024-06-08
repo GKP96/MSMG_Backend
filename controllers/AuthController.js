@@ -31,6 +31,7 @@ const signOut = async (req, res, next) => {
 
 const signup = async (req, res, next) => {
   const { lastname, firstname, email, password } = req.body;
+  console.log(lastname, firstname, email, password);
   const hashedPassword = bcryptjs.hashSync(password, 10);
   const newUser = new User({
     lastname,

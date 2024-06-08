@@ -7,8 +7,8 @@ import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import UserRouter from "./routes/UserRouter.js";
-import PropertyRouter from "./routes/PropertyRouter.js";
 import AuthRouter from "./routes/AuthRouter.js";
+import BlogRouter from "./routes/BlogRouter.js";
 
 const app = express();
 app.use(bodyParser.json());
@@ -17,8 +17,8 @@ app.use(cors());
 
 // routes
 app.use("/users", UserRouter);
-app.use("/properties", PropertyRouter);
 app.use("/auth", AuthRouter);
+app.use("/blogs", BlogRouter);
 app.use((err, req, res, next) => {
   res.status(500).json({
     message: err.message,
@@ -26,9 +26,9 @@ app.use((err, req, res, next) => {
     success: false,
   });
 });
-// const url =
-//   "mongodb+srv://Gautama:Gaunik%401234@cluster1.txuuzz9.mongodb.net/MSMG?retryWrites=true&w=majority&appName=Cluster1";
-const url = "mongodb://localhost:27017/MSMG"
+const url =
+  "mongodb+srv://Gautama:Gaunik%401234@cluster1.txuuzz9.mongodb.net/MSMG?retryWrites=true&w=majority&appName=Cluster1";
+// const url = "mongodb://localhost:27017/MSMG";
 mongoose.connect(url);
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "Connection error: "));
